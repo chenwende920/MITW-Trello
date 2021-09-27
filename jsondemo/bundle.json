@@ -1,0 +1,118 @@
+{
+    "resourceType": "Bundle",
+    "meta": {
+      "tag" : [{
+        "system": "https://api.dev.sita.tech/api/",
+        "code": "001c936a-17b0-4fc6-927d-fb33a6865542"
+        }]
+    },
+    "type": "collection",
+    "entry": [
+      {
+        "fullUrl": "https://hapi.fhir.tw/fhir/Patient/100288",
+        "resource": {
+            "resourceType": "Patient",
+            "identifier": [{
+                "use": "usual",
+                "value": "R124789456",
+                "type": {
+                    "text": "身份證字號"
+                }
+            }],
+            "name": [{
+                "use": "official",
+                "text": "王小明",
+                "family": "王",
+                "given": ["小明"]
+            }],
+            "gender": "male",
+            "birthDate": "1995-08-13",
+            "address": [{
+                "use": "home",
+                "text": "中正路8號",
+                "country": "TW"
+            }],
+            "telecom": [{
+                    "system": "phone",
+                    "value": "0975123456",
+                    "use": "mobile"
+            }],
+            "active": true
+        }
+      },
+      {
+        "fullUrl": "https://hapi.fhir.tw/fhir/Encounter/5485",
+        "resource": {
+            "resourceType" : "Encounter",
+            "id": "5485",
+            "status": "planned",
+            "class": {
+                "code": "AMB",
+                "display": "ambulatory"
+                }, 
+            "period": {
+                "start": "2021-09-07"  
+            },
+            "statusHistory": [
+                {
+                    "status": "arrived",
+                    "period": {
+                    "start": "2017-02-01T07:15:00+10:00",   
+                    "end": "2017-02-01T07:35:00+10:00"  
+                    }
+                },
+                {
+                    "status": "in-progress",  
+                    "period": {
+                    "start": "2017-02-01T08:45:00+10:00",  
+                    "end": "2017-02-01T12:15:00+10:00" 
+                    }
+                },
+                {
+                    "status": "onleave",
+                    "period": {
+                    "start": "2017-02-01T08:45:00+10:00",  
+                    "end": "2017-02-01T12:45:00+10:00" 
+                    }
+                }
+                ],
+            "location": [
+                {
+                    "location": {
+                        "display": "中華路與中正路交叉口"  
+                    },
+                    "status": "active"
+                    }
+            ],
+            "hospitalization": {
+                "admitSource": {
+                    "coding": [
+                    {
+                        "code": "emd",
+                        "display": "奇美醫院" 
+                    }
+                    ]
+                }
+                },
+            "subject": {
+                "reference": "Patient/100205",
+                "display": "楊0凡"
+            }
+        }
+      }
+    ]
+  }
+
+  //https://hapi.fhir.tw/fhir/Bundle/100289
+
+  //https://hapi.fhir.tw/fhir/Bundle?_tag=001c936a-17b0-4fc6-927d-fb33a6865542
+
+
+  //http://hapi.fhir.org/baseR4/Bundle/2546662
+
+  2547230
+
+  //https://hapi.fhir.tw/fhir/Bundle/100311
+
+
+  //https://api.dev.sita.tech/api/Bundle/100312

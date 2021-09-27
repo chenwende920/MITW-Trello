@@ -1,0 +1,57 @@
+{
+    "resourceType" : "Encounter",
+        "status": "planned",
+        "class": {
+            "code": "AMB",
+            "display": "ambulatory"
+          }, 
+        "period": {
+            "start": "2021-01-05"   填寫派遣單時間
+        },
+        "statusHistory": [
+            {
+              "status": "arrived",
+              "period": {
+                "start": "2017-02-01T07:15:00+10:00",   出勤時間
+                "end": "2017-02-01T07:35:00+10:00"  到達現場時間
+              }
+            },
+            {
+              "status": "in-progress",  
+              "period": {
+                "start": "2017-02-01T08:45:00+10:00",   離開現場時間
+                "end": "2017-02-01T12:15:00+10:00"  送達醫院時間
+              }
+            },
+            {
+              "status": "onleave",
+              "period": {
+                "start": "2017-02-01T08:45:00+10:00",   離開醫院時間
+                "end": "2017-02-01T12:45:00+10:00"  返隊待命時間
+              }
+            }
+          ],
+        "location": [
+            {
+                "location": {
+                  "display": "Emergency Waiting Room"   發生地點
+                },
+                "status": "active"
+              }
+        ],
+        "hospitalization": {
+            "admitSource": {
+              "coding": [
+                {
+                  "code": "emd",
+                  "display": "奇美醫院" 送往的醫院或地點
+                }
+              ]
+            }
+          },
+        "subject": {
+            "reference": "Patient/100205",
+            "display": "楊0凡"
+        }
+}
+

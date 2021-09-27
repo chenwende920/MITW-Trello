@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="uploadPatient.js"></script>
+
+</head>
+<body>
+    
+    <body>
+        <div class="container">
+            <h3 class="text-center">派遣單</h3>
+    
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <h4>病患資料</h4>
+                        <div class="form-group row p-2">
+                            <label class="col-sm-4 col-form-label">姓氏：</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="family">
+                            </div>
+                        </div>
+                        <div class="form-group row p-2">
+                            <label class="col-sm-4 col-form-label">名字：</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="given">
+                            </div>
+                        </div>
+                        <div class="form-group row p-2">
+                            <label class="col-sm-4 col-form-label">身分證字號：</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="identifier">
+                            </div>
+                        </div>
+                        <div class="form-group row p-2">
+                            <label class="col-sm-4 col-form-label">電話：</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="telecom">
+                            </div>
+                        </div>
+                        <div class="form-group row p-2">
+                            <label class="col-sm-4 col-form-label">性別：</label>
+                            <div class="col-sm-8">
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="gender-male" name="gender" class="custom-control-input" value="male">
+                                    <label class="custom-control-label" for="gender-male">男性</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="gender-female" name="gender" class="custom-control-input" value="female">
+                                    <label class="custom-control-label" for="gender-female">女性</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row p-2">
+                            <label class="col-sm-4 col-form-label">出生年月日：</label>
+                            <div class="col-sm-8">
+                                <input type="date" class="form-control" id="birthDate">
+                            </div>
+                        </div>
+                        <div class="form-group row p-2">
+                            <label class="col-sm-4 col-form-label">住址：</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="address">
+                            </div>
+                        </div>
+                        <div class="row p-4">
+                            <button type="button" class="btn btn-secondary btn-block" onclick="PostData()">上傳</button>
+                            <button type="button" class="btn btn-secondary btn-block mt-2" onclick="listPatients()">查詢</button>
+    
+                        </div>
+    
+                    </div>
+                </div>
+    
+               
+                <div class="row">
+                    <div id="content">
+                        <h4>顯示上傳的資料</h4>
+                        <div class="form-group">
+                            <textarea class="form-control" name="" id="resultData" cols="30" rows="20"></textarea>
+                        </div>
+                    </div>
+                </div>
+    
+    
+            </div>
+    
+        </div>
+
+
+</body>
+</html>

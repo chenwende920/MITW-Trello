@@ -1,0 +1,60 @@
+{
+    "resourceType" : "Encounter",
+    "id": "5485",
+    "status": "planned",
+    "class": {
+        "code": "AMB",
+        "display": "ambulatory"
+        }, 
+    "period": {
+        "start": "2021-09-07"  
+    },
+    "statusHistory": [
+        {
+            "status": "arrived",
+            "period": {
+            "start": "2017-02-01T07:15:00+10:00",   
+            "end": "2017-02-01T07:35:00+10:00"  
+            }
+        },
+        {
+            "status": "in-progress",  
+            "period": {
+            "start": "2017-02-01T08:45:00+10:00",  
+            "end": "2017-02-01T12:15:00+10:00" 
+            }
+        },
+        {
+            "status": "onleave",
+            "period": {
+            "start": "2017-02-01T08:45:00+10:00",  
+            "end": "2017-02-01T12:45:00+10:00" 
+            }
+        }
+        ],
+    "location": [
+        {
+            "location": {
+                "display": "中華路與中正路交叉口"  
+            },
+            "status": "active"
+            }
+    ],
+    "hospitalization": {
+        "admitSource": {
+            "coding": [
+            {
+                "code": "emd",
+                "display": "奇美醫院" 
+            }
+            ]
+        }
+        },
+    "subject": {
+        "reference": "Patient/100205",
+        "display": "楊0凡"
+    }
+}
+
+//https://hapi.fhir.tw/fhir/Encounter/100286
+
