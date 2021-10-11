@@ -1,0 +1,75 @@
+{
+    "resourceType": "MedicationDispense",
+
+    "status": "completed",
+    "medicationReference": {
+        "reference": "Medication/med-K000301"
+    },
+    "subject": {
+        "reference": "Patient/pat1"
+    },
+    "context": {
+        "reference": "Encounter/100423"
+    },
+    "authorizingPrescription": [
+        {
+        "reference": "MedicationRequest/100708"
+        }
+    ],
+    "quantity": {
+        "value": 100,
+        "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+        "code": "TAB"
+      },
+      "daysSupply": {
+        "value": 30,
+        "unit": "Day",
+        "system": "http://unitsofmeasure.org",
+        "code": "d"
+      },
+    "dosageInstruction": [
+        {
+        "sequence": 1,
+        "timing": {
+            "repeat": {
+            "frequency": 1,
+            "period": 1,
+            "periodUnit": "d"
+            }
+        },
+        "route": {
+            "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "394899003",
+                "display": "oral administration of treatment"
+            }
+            ]
+        },
+        "doseAndRate": [
+            {
+            "type": {
+                "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                    "code": "ordered",
+                    "display": "Ordered"
+                }
+                ]
+            },
+            "doseQuantity": {
+                "value": 500,
+                "unit": "mg",
+                "system": "http://unitsofmeasure.org",
+                "code": "mg"
+            }
+            }
+        ]
+        }
+    ]
+    
+}
+
+
+
+//https://hapi.fhir.tw/fhir/MedicationDispense/100709

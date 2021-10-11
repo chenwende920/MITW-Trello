@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="encounterList.js"></script>
+    <script src="getEncounter.js"></script>
+    <script src="putEncounter.js"></script>
+    <script src="config.js"></script>
+    <!--moment JS-->>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    
+    <body>
+        <div class="container">
+            <h3 class="text-center">派遣單</h3>
+    
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <div class="row">
+
+                        <button type="button" class="btn btn-secondary btn-block mt-2" onclick="listEncounters()">派遣單位查詢</button>
+                        <div class="input-group my-3">
+                            <input type="text" class="form-control" placeholder="請輸入派遣ID"  aria-describedby="button-addon2" id="searchId">
+                            <div class="input-group-append">
+                              <button class="btn btn-outline-secondary" type="button"  onclick="searchEncounter()">送出</button>
+                            </div>
+                          </div>
+                            
+                       <div class="row p-2">
+                            <div id="content">
+                                
+                            </div>
+                        </div>
+
+
+                    </div>
+                
+
+                </div>
+    
+                <div class="col-md-6">
+                    <div class="row">
+
+                        <div id="detailContent">
+                            <div class="row p-2">
+                                
+
+                            </div>
+                        </div>
+
+                    </div>
+                
+
+                </div>
+
+
+    
+            </div>
+    
+        </div>
+
+
+</body>
+</html>

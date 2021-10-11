@@ -1,0 +1,54 @@
+{
+    "resourceType" : "MedicationRequest",
+    "status": "draft",
+    "intent": "order",
+    "category": [{
+        "coding": [{
+            "code": "inpatient",
+            "display": "Inpatient"
+        }]
+    }],
+    "medicationReference": {
+        "reference": "Medication/med-K000301"
+    },
+    "subject": {
+        "reference": "Patient/100320"
+    },
+    "encounter": {
+        "reference": "Encounter/100423"
+    },
+    "authoredOn": "2015-01-15",
+    "dosageInstruction": [
+        {
+          "sequence": 1,
+          "timing": {
+            "repeat": {
+              "count": 1
+            }
+          },
+          "doseAndRate": [  
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                    "code": "ordered",
+                    "display": "Ordered"
+                  }
+                ]
+              },
+              "doseQuantity": {
+                "value": 500,
+                "unit": "mg",
+                "system": "http://unitsofmeasure.org",
+                "code": "mg"
+              }
+            }
+
+            
+          ]
+        }
+    ]
+    
+}
+

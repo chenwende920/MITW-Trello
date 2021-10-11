@@ -1,0 +1,196 @@
+{
+    "resourceType": "Bundle",
+    "id": "bundle-transaction",
+    "meta": {
+      "tag" : [{
+        "system": "https://api.dev.sita.tech/api/",
+        "code": "001c936a-17b0-4fc6-927d-fb33a6865542"
+        }]
+    },
+    "type": "transaction",
+    "entry": [
+      {
+        "fullUrl": "https://hapi.fhir.tw/fhir/MedicationRequest/EMS-mdr",
+        "resource": {
+            "resourceType" : "MedicationRequest",
+            "status": "draft",
+            "intent": "order",
+            "category": [{
+                "coding": [{
+                    "code": "inpatient",
+                    "display": "Inpatient"
+                }]
+            }],
+            "medicationReference": {
+                "reference": "Medication/med-K000301"
+            },
+            "subject": {
+                "reference": "Patient/100320"
+            },
+            "encounter": {
+                "reference": "Encounter/100423"
+            },
+            "authoredOn": "2015-01-15",
+            "dosageInstruction": [
+                {
+                "sequence": 1,
+                "timing": {
+                    "repeat": {
+                    "count": 1
+                    }
+                },
+                "doseAndRate": [  
+                    {
+                    "type": {
+                        "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                            "code": "ordered",
+                            "display": "Ordered"
+                        }
+                        ]
+                    },
+                    "doseQuantity": {
+                        "value": 500,
+                        "unit": "mg",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "mg"
+                    }
+                    }
+
+                    
+                ]
+                }
+            ]
+        },
+        "request": {
+            "method": "POST",
+            "url": "MedicationRequest/EMS-mdr"
+        }
+    },
+        {
+        "fullUrl": "https://hapi.fhir.tw/fhir/MedicationDispense/EMS-mdd",
+        "resource": {
+            "resourceType": "MedicationDispense",
+
+            "status": "completed",
+            "medicationReference": {
+                "reference": "Medication/med-K000301"
+            },
+            "subject": {
+                "reference": "Patient/100320"
+            },
+            "context": {
+                "reference": "Encounter/100423"
+            },
+            "authorizingPrescription": [
+                {
+                "reference": "MedicationRequest/EMS-mdr"
+                }
+            ],
+            "quantity": {
+                "value": 100,
+                "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+                "code": "TAB"
+            },
+            "daysSupply": {
+                "value": 30,
+                "unit": "Day",
+                "system": "http://unitsofmeasure.org",
+                "code": "d"
+            },
+            "dosageInstruction": [
+                {
+                "sequence": 1,
+                "timing": {
+                    "repeat": {
+                    "frequency": 1,
+                    "period": 1,
+                    "periodUnit": "d"
+                    }
+                },
+                "route": {
+                    "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "394899003",
+                        "display": "oral administration of treatment"
+                    }
+                    ]
+                },
+                "doseAndRate": [
+                    {
+                    "type": {
+                        "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                            "code": "ordered",
+                            "display": "Ordered"
+                        }
+                        ]
+                    },
+                    "doseQuantity": {
+                        "value": 500,
+                        "unit": "mg",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "mg"
+                    }
+                    }
+                ]
+                }
+            ]
+        },
+        "request": {
+            "method": "POST",
+            "url": "MedicationDispense/EMS-mdd"
+        }
+    },
+    {
+        "fullUrl": "https://hapi.fhir.tw/fhir/MedicationAdministration/EMS-mda",
+        "resource": {
+
+            "resourceType": "MedicationAdministration",
+    
+            "status": "completed",
+            "medicationReference": {
+                "reference": "Medication/med-K000301"
+            },
+            "subject": {
+                "reference": "Patient/100320"
+            },
+            "context": {
+                "reference": "Encounter/100423"
+            },
+            "effectivePeriod": {
+                "start": "2015-01-15T14:30:00+01:00"
+            },
+            "reasonCode": [   
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/reason-medication-given",
+                        "code": "b",
+                        "display": "Given as Ordered"
+                    }
+                ]
+            }
+            ],
+            "request": {
+                "reference": "MedicationRequest/EMS-mdr"
+            },
+            "dosage": {
+                "dose": {
+                    "value": 500,
+                    "unit": "mg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mg"
+                }
+            }
+        },
+        "request": {
+            "method": "POST",
+            "url": "MedicationAdministration/EMS-mda"
+        }
+    }
+    ]
+}

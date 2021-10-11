@@ -21,8 +21,15 @@ function PostData(){
     let accidentLocation = document.getElementById('accidentLocation').value;
     let hospitalization = document.getElementById('hospitalization').value;
 
-    let patientId = document.getElementById('patientID').value;
-
+    let patientID = document.getElementById('patientID').value;
+    let organizationID = document.getElementById('organizationID').value;
+    let items = document.getElementsByName("status");
+    let get_status = "";
+    for(let i=0; i<items.length;i++){
+        if(items[i].checked){
+            get_status = items[i].value;
+        }
+    }
 
     let tagid = "001c936a-17b0-4fc6-927d-fb33a6865542";
 
@@ -35,7 +42,7 @@ function PostData(){
             code: tagid
             }]
         },
-        status: "planned",
+        status: get_status,
         class: {
             code: "AMB",
             display: "ambulatory"
@@ -72,7 +79,7 @@ function PostData(){
                     display: accidentLocation
                 },
                 status: "active"
-                }
+            }
         ],
         hospitalization: {
             admitSource: {
@@ -86,8 +93,14 @@ function PostData(){
         },
 
         subject: {
-            reference: "Patient/"+patientId
+            reference: "Patient/"+patientID
+        },
+
+        serviceProvider: {
+            reference: "Organization/"+organizationID
         }
+
+
     }
 
 
@@ -108,3 +121,10 @@ function PostData(){
 
 
 //https://hapi.fhir.tw/fhir/Encounter/100321
+//https://hapi.fhir.tw/fhir/Organization/100063
+//https://hapi.fhir.tw/fhir/Patient/100320
+//https://hapi.fhir.tw/fhir/Encounter/100377   (有加派遣單位)
+//https://hapi.fhir.tw/fhir/Encounter/100378   (有加派遣單位和status)
+//https://hapi.fhir.tw/fhir/Encounter/100423   (有加派遣單位和status)
+
+//https://hapi.fhir.tw/fhir/Encounter/100890   (初始派遣單)
